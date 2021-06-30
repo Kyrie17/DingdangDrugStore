@@ -1,0 +1,21 @@
+# 在application.yml中添加数据源配置和MyBatis的mapper.xml的路径配置。
+server:
+  port: 8090
+
+spring:
+  application:
+    name: dingdang-drugstore
+  servlet:
+    multipart:
+      enabled: true #开启文件上传
+      max-file-size: 100MB #限制文件上传大小为10M
+      max-request-size: 100MB
+  datasource:
+    url: jdbc:mysql://106.52.76.27:3306/dingdang_drugstore?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+    username: kyrie
+    password: mysql9900
+
+mybatis:
+  mapper-locations:
+    - classpath:mapper/*.xml
+    - classpath*:com/**/mapper/*.xml
